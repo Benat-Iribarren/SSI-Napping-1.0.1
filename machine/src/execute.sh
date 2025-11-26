@@ -1,12 +1,13 @@
 #! /bin/bash
 
+echo "[+] Iniciando MariaDB..."
+service mariadb start
+
+echo "[+] Iniciando Apache..."
 service apache2 start
-service ssh start
 
-while [ 1 == 1 ]; do
+echo "[+] Iniciando Cron..."
+service cron start
 
-	cat -;
-
-	sleep 1;
-
-done;
+echo "[+] Sistema Napping listo."
+tail -f /var/log/apache2/access.log
