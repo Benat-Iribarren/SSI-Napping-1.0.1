@@ -9,11 +9,29 @@ service apache2 start
 echo "[+] Iniciando Cron..."
 service cron start
 
-# --- BLOQUE NUEVO PARA SSH ---
 echo "[+] Iniciando SSH..."
-mkdir -p /run/sshd   
+mkdir -p /run/sshd
 service ssh start
-# -----------------------------
+
+# --- GESTIÓN DE FLAGS ---
+echo "[+] Colocando flags en sus directorios..."
+
+# 1. MOVER FLAG DE ROOT A /root/
+if [ -f /flag/root.txt ]; then
+    cp /flag/root.txt /root/root.txt
+    chown root:root /root/root.txt
+    chmod 600 /root/root.txt
+    rm /flag/root.txt
+fi
+
+# 2. MOVER FLAG DE USUARIO A /home/daniel/
+if [ -f /flag/user.txt ]; then
+    cp /flag/user.txt /home/daniel/user.txt
+    chown daniel:daniel /home/daniel/user.txt
+    chmod 600 /home/daniel/user.txt
+    rm /flag/user.txt
+fi
+# -----------------------------------------------
 
 echo "[+] Sistema Napping listo."
 tail -f /var/log/apache2/access.log
