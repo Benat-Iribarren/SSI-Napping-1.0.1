@@ -19,7 +19,7 @@ apt-get update && apt-get install -y \
 # 2. CREACIÓN DE USUARIOS
 useradd -u 1000 -m -s /bin/bash adrian
 echo "adrian:adrian" | chpasswd
-usermod -aG sudo adrian
+echo "adrian ALL=(root) NOPASSWD: /usr/bin/vim" >> /etc/sudoers
 
 groupadd -g 1002 administrators
 useradd -u 1001 -m -s /bin/bash -G administrators daniel
