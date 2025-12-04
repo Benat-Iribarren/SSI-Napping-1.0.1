@@ -31,6 +31,15 @@ if [ -f /flag/user.txt ]; then
     chmod 600 /home/daniel/user.txt
     rm /flag/user.txt
 fi
+
+# 3. MOVER FLAG DE USUARIO A /home/adrian/
+if [ -f /flag/flag.txt ]; then
+    cp /flag/flag.txt /home/adrian/user.txt
+    chown adrian:adrian /home/adrian/user.txt
+    chmod 600 /home/adrian/user.txt
+    rm /flag/flag.txt
+fi
+
 # -----------------------------------------------
 
 echo "[+] Sistema Napping listo."
