@@ -1,0 +1,21 @@
+
+CREATE DATABASE IF NOT EXISTS website;
+USE website;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS links (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    link TEXT NOT NULL
+);
+
+CREATE USER IF NOT EXISTS 'adrian'@'localhost' IDENTIFIED BY 'P@sswr0d456';
+GRANT ALL PRIVILEGES ON website.* TO 'adrian'@'localhost';
+FLUSH PRIVILEGES;
+
+INSERT INTO users (username, password) VALUES ('daniel', '$2y$10$S.yQc7.W.yQc7.W.yQc7.W.yQc7.W.yQc7.W.yQc7.W.yQc7.W.y');
