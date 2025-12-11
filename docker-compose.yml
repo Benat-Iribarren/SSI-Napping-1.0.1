@@ -9,7 +9,7 @@ services:
       - "8080:80"
       - "2222:22"
     extra_hosts:                          
-      - "host.docker.internal:host-gateway"  #
+      - "host.docker.internal:host-gateway"  
     networks:
       - internal_net
 
