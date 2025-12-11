@@ -53,5 +53,4 @@ chmod 644 /etc/cron.d/vuln_task
 #7 meto a adrian en sudoers para que pueda editar archivos con vim
 echo "adrian (root) NOPASSWD: /usr/bin/vim" >> /etc/sudoers
 
-# 7. FLAGS
 mkdir -p /flag
