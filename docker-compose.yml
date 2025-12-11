@@ -6,8 +6,8 @@ services:
     volumes:
       - ./flag:/flag
     ports:
-      - "8080:80"    # Puerto Web 
-      - "2222:22"    # Puerto SSH
+      - "8080:80"
+      - "2222:22"
     networks:
       - internal_net
 
