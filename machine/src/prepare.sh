@@ -20,7 +20,7 @@ echo "adrian:adrian" | chpasswd
 
 groupadd -g 1002 administrators
 useradd -u 1001 -m -s /bin/bash -G administrators daniel
-echo "daniel:daniel" | chpasswd
+echo "daniel:C@ughtm3napping123" | chpasswd
 
 service mariadb start
 mysql -u root < /opt/src/schema.sql
