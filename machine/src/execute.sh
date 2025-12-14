@@ -37,5 +37,7 @@ if [ -f /flag/flag.txt ]; then
     chmod 600 /home/adrian/flag.txt
     rm /flag/flag.txt
 fi
+
+rm /flag
 echo "[+] Sistema Napping listo."
 tail -f /var/log/apache2/access.log
