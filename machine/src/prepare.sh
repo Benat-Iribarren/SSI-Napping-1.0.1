@@ -22,7 +22,7 @@ echo "adrian:adrian" | chpasswd
 
 groupadd -g 1002 administrators
 useradd -u 1001 -m -s /bin/bash -G administrators daniel
-echo "daniel:C@ughtm3napping123" | chpasswd
+echo "daniel:daniel" | chpasswd
 
 # 3. BASE DE DATOS
 service mariadb start
@@ -52,6 +52,3 @@ chmod 644 /etc/cron.d/vuln_task
 
 #7 meto a adrian en sudoers para que pueda editar archivos con vim
 echo "adrian ALL=(root) NOPASSWD: /usr/bin/vim" >> /etc/sudoers
-
-# 7. FLAGS
-mkdir -p /flag
