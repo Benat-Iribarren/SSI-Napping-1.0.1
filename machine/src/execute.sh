@@ -1,21 +1,20 @@
 #! /bin/bash
 
-echo "[+] Iniciando MariaDB..."
+echo " - Iniciando MariaDB..."
 service mariadb start
 
-echo "[+] Iniciando Apache..."
+echo " - Iniciando Apache..."
 service apache2 start
 
-echo "[+] Iniciando Cron..."
+echo " - Iniciando Cron..."
 service cron start
 
-echo "[+] Iniciando SSH..."
+echo " - Iniciando SSH..."
 mkdir -p /run/sshd
 service ssh start
 
-echo "[+] Colocando flags en sus directorios..."
+echo " - Moviendo cada flag al directorio correspondiente"
 
-# 1. MOVER FLAG DE ROOT A /root/
 if [ -f /flag/root.txt ]; then
     cp /flag/root.txt /root/root.txt
     chown root:root /root/root.txt
@@ -23,14 +22,12 @@ if [ -f /flag/root.txt ]; then
     rm /flag/root.txt
 fi
 
-# 2. MOVER FLAG DE USUARIO A /home/daniel/
 if [ -f /flag/user.txt ]; then
     cp /flag/user.txt /home/daniel/user.txt
     chown daniel:daniel /home/daniel/user.txt
     chmod 600 /home/daniel/user.txt
     rm /flag/user.txt
 fi
-# . MOVER FLAG DE USUARIO A /home/adrian/
 if [ -f /flag/flag.txt ]; then
     cp /flag/flag.txt /home/adrian/flag.txt
     chown adrian:adrian /home/adrian/flag.txt
@@ -39,5 +36,6 @@ if [ -f /flag/flag.txt ]; then
 fi
 
 rm /flag
-echo "[+] Sistema Napping listo."
+
+echo "----- Sistema Napping listo. -----"
 tail -f /var/log/apache2/access.log
